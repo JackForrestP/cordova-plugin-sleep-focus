@@ -1,0 +1,11 @@
+{
+  "name": "cordova-plugin-sleep-focus",
+  "version": "1.0.0",
+  "description": "Cordova plugin to check iOS Sleep Focus status",
+  "author": "Jack Phillips",
+  "license": "MIT",
+  "cordova": {
+    "id": "cordova-plugin-sleep-focus",
+    "platforms": ["ios"]
+  }
+}
