@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="cordova-plugin-sleep-focus"
-        version="1.0.0">
+        version="1.1.0">
 
     <name>SleepFocusPlugin</name>
     <description>Plugin to check iOS Sleep Focus status</description>
@@ -10,9 +10,19 @@
     <author>Jack Phillips</author>
 
     <platform name="ios">
+        <!-- Add Swift version preference -->
+        <preference name="UseSwiftLanguageVersion" value="5.0" />
+
+        <!-- Add the required DeviceActivity framework -->
+        <framework src="DeviceActivity.framework" weak="true" />
+
+        <!-- Add Info.plist key for focus status usage -->
         <config-file target="*-Info.plist" parent="NSFocusStatusUsageDescription">
             <string>This app needs access to Sleep Focus status to improve user experience.</string>
         </config-file>
-        <source-file src="src/ios/SleepFocusPlugin.swift" />
+
+        <!-- Link Objective-C implementation files -->
+        <source-file src="src/ios/SleepFocusPlugin.h" />
+        <source-file src="src/ios/SleepFocusPlugin.m" />
     </platform>
 </plugin>
